@@ -39,10 +39,8 @@ export function SiteHeader() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled
-          ? "glass-effect border-b border-border/50 shadow-lg"
-          : "bg-transparent"
+        "site-header fixed top-0 left-0 right-0 z-[9999] transition-all duration-500",
+        isScrolled ? "glass-effect border-b border-border/50 shadow-lg" : ""
       )}
     >
       <div className="max-w-7xl mx-auto container-padding">
@@ -129,7 +127,7 @@ export function SiteHeader() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden glass-effect border-t border-border/50"
+            className="md:hidden mobile-menu glass-effect border-t border-border/50 absolute top-full left-0 right-0 z-[9998]"
           >
             <div className="container-padding py-6 space-y-4">
               {navItems.map((item, index) => (
