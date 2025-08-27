@@ -70,5 +70,8 @@ module.exports = {
     'hover:text-primary',
     'hover:bg-primary',
     'hover:border-primary',
+    'group-hover:text-primary',
+    'group-hover:bg-primary',
+    'group-hover:border-primary',
   ],
 }

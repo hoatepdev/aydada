@@ -13,6 +13,7 @@ import {
   Github,
   Twitter,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const quickLinks = [
   { label: "Dịch vụ", href: "#services" },
@@ -34,7 +35,7 @@ const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
 ];
 
-export function SiteFooter() {
+export function SiteFooter({ className }: { className?: string }) {
   const footerRef = useScrollReveal();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId.replace("#", ""));
@@ -50,7 +51,10 @@ export function SiteFooter() {
   return (
     <footer
       ref={footerRef}
-      className="bg-muted/50 border-t animate-scroll-reveal"
+      className={cn(
+        "bg-muted/50 border-t animate-scroll-reveal",
+        className
+      )}
     >
       <div className="max-w-7xl mx-auto container-padding">
         {/* Main Footer Content */}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { MobileMenuProvider } from "@/contexts/mobile-menu-context";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -32,7 +33,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <MobileMenuProvider>
+          {children}
+        </MobileMenuProvider>
         <Toaster />
       </body>
     </html>

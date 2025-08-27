@@ -58,7 +58,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="from-background via-muted/30 to-background relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden bg-gradient-to-br">
+    <section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden bg-gradient-to-br">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{

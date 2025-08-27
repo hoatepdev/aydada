@@ -1,70 +1,5 @@
 @import 'tailwindcss';
 
-/* Custom utility classes for primary colors */
-.text-primary {
-  color: hsl(var(--color-primary));
-}
-
-.text-primary-foreground {
-  color: hsl(var(--color-primary-foreground));
-}
-
-.text-secondary {
-  color: hsl(var(--color-secondary));
-}
-
-.text-secondary-foreground {
-  color: hsl(var(--color-secondary-foreground));
-}
-
-.text-muted {
-  color: hsl(var(--color-muted));
-}
-
-.text-muted-foreground {
-  color: hsl(var(--color-muted-foreground));
-}
-
-.text-accent {
-  color: hsl(var(--color-accent));
-}
-
-.text-accent-foreground {
-  color: hsl(var(--color-accent-foreground));
-}
-
-.text-destructive {
-  color: hsl(var(--color-destructive));
-}
-
-.text-destructive-foreground {
-  color: hsl(var(--color-destructive-foreground));
-}
-
-.bg-primary {
-  background-color: hsl(var(--color-primary));
-}
-
-.bg-primary-foreground {
-  background-color: hsl(var(--color-primary-foreground));
-}
-
-.border-primary {
-  border-color: hsl(var(--color-primary));
-}
-
-.hover\:text-primary:hover {
-  color: hsl(var(--color-primary));
-}
-
-.hover\:bg-primary:hover {
-  background-color: hsl(var(--color-primary));
-}
-
-.hover\:border-primary:hover {
-  border-color: hsl(var(--color-primary));
-}
-
 @layer base {
   :root {
     --color-primary: 158 64% 52%;
@@ -118,7 +53,7 @@
     --color-muted: 217.2 32.6% 17.5%;
     --color-muted-foreground: 215 20.2% 65.1%;
     --color-accent: 158 64% 52%;
-    --color-accent-foreground: 0 0% 100%;
+    --color-accent-foreground: 0 0% 98%;
     --color-destructive: 0 62.8% 30.6%;
     --color-destructive-foreground: 210 40% 98%;
     --color-border: 217.2 32.6% 17.5%;
@@ -179,22 +114,22 @@
   }
 
   .site-header.glass-effect {
-    z-index: 9999 !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .dark .site-header.glass-effect {
-    background: rgba(0, 0, 0, 0.95) !important;
+    background: rgba(0, 0, 0, 0.95);
   }
 
   .site-header {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 9999 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
@@ -222,22 +157,18 @@
   }
 
   .site-header.fixed {
-    position: fixed !important;
+    position: fixed;
   }
 
   .site-header .mobile-menu {
-    z-index: 9998 !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
+    z-index: 9998;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
   }
 
-  main {
-    position: relative;
-    z-index: 1;
-  }
-
+  main,
   section {
     position: relative;
     z-index: 1;
@@ -381,6 +312,65 @@
   .animate-button-press:active {
     transform: scale(0.97);
   }
+
+  .text-primary {
+    color: hsl(var(--color-primary));
+  }
+  .text-primary-foreground {
+    color: hsl(var(--color-primary-foreground));
+  }
+  .text-secondary {
+    color: hsl(var(--color-secondary));
+  }
+  .text-secondary-foreground {
+    color: hsl(var(--color-secondary-foreground));
+  }
+  .text-muted {
+    color: hsl(var(--color-muted));
+  }
+  .text-muted-foreground {
+    color: hsl(var(--color-muted-foreground));
+  }
+  .text-accent {
+    color: hsl(var(--color-accent));
+  }
+  .text-accent-foreground {
+    color: hsl(var(--color-accent-foreground));
+  }
+  .text-destructive {
+    color: hsl(var(--color-destructive));
+  }
+  .text-destructive-foreground {
+    color: hsl(var(--color-destructive-foreground));
+  }
+
+  .bg-primary {
+    background-color: hsl(var(--color-primary));
+  }
+  .bg-primary-foreground {
+    background-color: hsl(var(--color-primary-foreground));
+  }
+  .border-primary {
+    border-color: hsl(var(--color-primary));
+  }
+
+  .hover\:text-primary:hover {
+    color: hsl(var(--color-primary));
+  }
+  .hover\:bg-primary:hover {
+    background-color: hsl(var(--color-primary));
+  }
+  .hover\:border-primary:hover {
+    border-color: hsl(var(--color-primary));
+  }
+
+  .group:hover .group-hover\:text-primary {
+    color: hsl(var(--color-primary));
+  }
+  .group:hover [data-slot='card-title'] {
+    color: hsl(var(--color-primary));
+    transition: color 0.3s ease;
+  }
 }
 
 @keyframes float {
@@ -414,8 +404,8 @@
   .animate-nav-link,
   .animate-card-hover,
   .animate-button-press {
-    animation: none !important;
-    transition: none !important;
+    animation: none;
+    transition: none;
   }
 
   .animate-scroll-reveal {
