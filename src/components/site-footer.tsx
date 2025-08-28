@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 import {
   MapPin,
   Phone,
@@ -12,62 +12,59 @@ import {
   Linkedin,
   Github,
   Twitter,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
+} from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const quickLinks = [
-  { label: "Dịch vụ", href: "#services" },
-  { label: "Về chúng tôi", href: "#about" },
-  { label: "Liên hệ", href: "#contact" },
-];
+  { label: 'Dịch vụ', href: '#services' },
+  { label: 'Về chúng tôi', href: '#about' },
+  { label: 'Liên hệ', href: '#contact' },
+]
 
 const services = [
-  { label: "Thiết kế Website", href: "#services" },
-  { label: "Phát triển Phần mềm", href: "#services" },
-  { label: "Ứng dụng Mobile", href: "#services" },
-  { label: "Giải pháp AI", href: "#services" },
-];
+  { label: 'Thiết kế Website', href: '#services' },
+  { label: 'Phát triển Phần mềm', href: '#services' },
+  { label: 'Ứng dụng Mobile', href: '#services' },
+  { label: 'Giải pháp AI', href: '#services' },
+]
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-];
+  { icon: Facebook, href: '#', label: 'Facebook' },
+  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Github, href: '#', label: 'GitHub' },
+  { icon: Twitter, href: '#', label: 'Twitter' },
+]
 
 export function SiteFooter({ className }: { className?: string }) {
-  const footerRef = useScrollReveal();
+  const footerRef = useScrollReveal()
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace("#", ""));
+    const element = document.getElementById(sectionId.replace('#', ''))
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <footer
       ref={footerRef}
-      className={cn(
-        "bg-muted/50 border-t animate-scroll-reveal",
-        className
-      )}
+      className={cn('bg-muted/50 animate-scroll-reveal border-t', className)}
     >
-      <div className="max-w-7xl mx-auto container-padding">
+      <div className="container-padding mx-auto max-w-7xl">
         {/* Main Footer Content */}
-        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid gap-8 py-6 md:grid-cols-2 md:py-16 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="space-y-4">
               {/* Logo */}
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-lg hero-gradient flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">A</span>
+                <div className="hero-gradient flex h-8 w-8 items-center justify-center rounded-lg">
+                  <span className="text-lg font-bold text-white">A</span>
                 </div>
-                <span className="text-xl font-bold text-foreground">
+                <span className="text-foreground text-xl font-bold">
                   Aydada
                 </span>
               </div>
@@ -79,23 +76,23 @@ export function SiteFooter({ className }: { className?: string }) {
 
             {/* Social Links */}
             <div className="space-y-3">
-              <h4 className="font-semibold text-sm">Theo dõi chúng tôi</h4>
+              <h4 className="text-sm font-semibold">Theo dõi chúng tôi</h4>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon;
+                  const IconComponent = social.icon
                   return (
                     <Button
                       key={index}
                       variant="outline"
                       size="icon"
-                      className="h-9 w-9 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                      className="hover:bg-primary hover:text-primary-foreground hover:border-primary h-9 w-9 transition-all"
                       asChild
                     >
                       <a href={social.href} aria-label={social.label}>
                         <IconComponent className="h-4 w-4" />
                       </a>
                     </Button>
-                  );
+                  )
                 })}
               </div>
             </div>
@@ -109,7 +106,7 @@ export function SiteFooter({ className }: { className?: string }) {
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
                   >
                     {link.label}
                   </button>
@@ -126,7 +123,7 @@ export function SiteFooter({ className }: { className?: string }) {
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(service.href)}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
                   >
                     {service.label}
                   </button>
@@ -140,31 +137,31 @@ export function SiteFooter({ className }: { className?: string }) {
             <h4 className="font-semibold">Thông tin liên hệ</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <MapPin className="text-primary mt-0.5 h-4 w-4 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm leading-relaxed">
                   C2-610 chung cư An Viên 2, khu dân cư Nam Long, quận 7, tp HCM
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                <Phone className="text-primary h-4 w-4 flex-shrink-0" />
                 <a
                   href="tel:+84931519393"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-muted-foreground hover:text-primary text-sm transition-colors"
                 >
                   +84 93 151 9393
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
+                <Mail className="text-primary h-4 w-4 flex-shrink-0" />
                 <a
                   href="mailto:contact@aydada.com"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-muted-foreground hover:text-primary text-sm transition-colors"
                 >
                   contact@aydada.com
                 </a>
               </div>
               <div className="flex items-start gap-3">
-                <Clock className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <Clock className="text-primary mt-0.5 h-4 w-4 flex-shrink-0" />
                 <div className="text-muted-foreground text-sm">
                   <div>Thứ 2 - Thứ 6: 8:00 - 17:30</div>
                   <div>Thứ 7: 8:00 - 12:00</div>
@@ -177,14 +174,14 @@ export function SiteFooter({ className }: { className?: string }) {
         <Separator />
 
         {/* Bottom Footer */}
-        <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row md:py-6">
           <p className="text-muted-foreground text-sm">
             © 2024 Aydada. Tất cả quyền được bảo lưu.
           </p>
           <div className="flex items-center gap-6">
             <button
               onClick={scrollToTop}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm"
+              className="text-muted-foreground hover:text-primary text-sm transition-colors"
             >
               Về đầu trang
             </button>
@@ -195,5 +192,5 @@ export function SiteFooter({ className }: { className?: string }) {
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -79,21 +79,25 @@ const commitments = [
     icon: Award,
     title: 'Chất lượng đảm bảo',
     description: 'Cam kết chất lượng cao với quy trình kiểm soát nghiêm ngặt',
+    color: '#2563EB',
   },
   {
     icon: Clock,
     title: 'Giao hàng đúng hạn',
     description: 'Tuân thủ timeline và milestone đã cam kết với khách hàng',
+    color: '#16A34A',
   },
   {
     icon: Users,
     title: 'Đội ngũ chuyên nghiệp',
     description: 'Kỹ sư giàu kinh nghiệm và tận tâm với dự án',
+    color: '#9333EA',
   },
   {
     icon: HeartHandshake,
     title: 'Hỗ trợ dài hạn',
     description: 'Bảo trì và hỗ trợ kỹ thuật sau khi bàn giao dự án',
+    color: '#EA580C',
   },
 ]
 
@@ -205,9 +209,8 @@ export function AboutSection() {
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="glass-effect hover:shadow-primary/10 group relative h-full overflow-hidden border-0 px-2 py-2 text-center transition-all duration-500 hover:shadow-xl md:px-6 md:py-8">
+                  <Card className="glass-effect hover:shadow-primary/10 group relative h-full cursor-pointer overflow-hidden border-0 px-2 py-2 text-center transition-all duration-500 hover:shadow-xl md:px-6 md:py-8">
                     <div className="from-primary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
                     <CardContent className="relative z-10 space-y-3 px-0">
                       <motion.div
                         initial={{ scale: 0 }}
@@ -295,11 +298,11 @@ export function AboutSection() {
         </div>
 
         {/* Commitments Section */}
-        <div className="space-y-12">
+        <div className="container-padding space-y-12 py-6">
           <div className="space-y-4 text-center">
-            <h3 className="text-2xl font-bold md:text-3xl">
-              Cam kết của Aydada
-            </h3>
+            <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl">
+              Cam kết của <span className="text-gradient">Aydada</span>
+            </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl">
               Chúng tôi đồng hành cùng bạn, vì một tương lai bền vững. Với kinh
               nghiệm thực chiến và tư duy thiết kế hiện đại, Aydada cam kết mang
@@ -314,13 +317,24 @@ export function AboutSection() {
               return (
                 <Card
                   key={index}
-                  className="card-shadow animate-card-hover group p-6 text-center"
+                  className="card-shadow animate-card-hover group text-center"
                 >
                   <CardContent className="space-y-4">
-                    <div className="bg-primary/10 group-hover:bg-primary/20 mx-auto flex h-16 w-16 items-center justify-center rounded-2xl transition-colors">
-                      <IconComponent className="text-primary h-8 w-8" />
+                    <div
+                      style={{
+                        backgroundColor: `${commitment.color}20`,
+                        border: `1px solid ${commitment.color}30`,
+                      }}
+                      className="bg-primary/10 mx-auto flex h-16 w-16 transform items-center justify-center rounded-2xl transition-colors duration-300 ease-in-out group-hover:rotate-6"
+                    >
+                      <IconComponent
+                        className="h-8 w-8"
+                        style={{ color: commitment.color }}
+                      />
                     </div>
-                    <h4 className="font-semibold">{commitment.title}</h4>
+                    <h4 className="group-hover:text-primary font-semibold">
+                      {commitment.title}
+                    </h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {commitment.description}
                     </p>
