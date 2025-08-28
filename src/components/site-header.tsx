@@ -1,65 +1,65 @@
-"use client";
+'use client'
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
-import { useMobileMenu } from "@/contexts/mobile-menu-context";
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { Menu, X } from 'lucide-react'
+import { useMobileMenu } from '@/contexts/mobile-menu-context'
 
 export function SiteHeader() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { isMobileMenuOpen, setIsMobileMenuOpen } = useMobileMenu();
-  
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const mobileButtonRef = useRef<HTMLButtonElement>(null);
-  
+  const [isScrolled, setIsScrolled] = useState(false)
+  const { isMobileMenuOpen, setIsMobileMenuOpen } = useMobileMenu()
+
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
+  const mobileButtonRef = useRef<HTMLButtonElement>(null)
+
   useEffect(() => {
-    if (!isMobileMenuOpen) return;
-    
+    if (!isMobileMenuOpen) return
+
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      const target = event.target as Node;
+      const target = event.target as Node
       if (
-        mobileMenuRef.current && 
+        mobileMenuRef.current &&
         !mobileMenuRef.current.contains(target) &&
         mobileButtonRef.current &&
         !mobileButtonRef.current.contains(target)
       ) {
-        setIsMobileMenuOpen(false);
+        setIsMobileMenuOpen(false)
       }
-    };
-    
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("touchstart", handleClickOutside);
-    
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside)
+
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
-    };
-  }, [isMobileMenuOpen, setIsMobileMenuOpen]);
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [isMobileMenuOpen, setIsMobileMenuOpen])
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+      setIsScrolled(window.scrollY > 20)
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+      element.scrollIntoView({ behavior: 'smooth' })
+      setIsMobileMenuOpen(false)
     }
-  };
+  }
 
   const navItems = [
-    { label: "Dịch vụ", id: "services" },
-    { label: "Về chúng tôi", id: "about" },
-    { label: "Liên hệ", id: "contact" },
-  ];
+    { label: 'Dịch vụ', id: 'services' },
+    { label: 'Về chúng tôi', id: 'about' },
+    { label: 'Liên hệ', id: 'contact' },
+  ]
 
   return (
     <motion.header
@@ -159,7 +159,7 @@ export function SiteHeader() {
             transition={{ duration: 0.3 }}
             className="mobile-menu glass-effect border-border/50 absolute top-full right-0 left-0 z-[9998] h-screen border-t bg-[#fff] md:hidden"
           >
-            <div className="container-padding space-y-4 py-6">
+            <div className="container-padding mx-auto max-w-7xl space-y-4 py-6">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}

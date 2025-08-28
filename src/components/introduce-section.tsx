@@ -3,16 +3,12 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import {
-  Users,
   Award,
-  Clock,
-  HeartHandshake,
   Leaf,
   Lightbulb,
   Heart,
   CheckCircle2,
   Target,
-  Sparkles,
 } from 'lucide-react'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
 
@@ -74,32 +70,7 @@ const values = [
   },
 ]
 
-const commitments = [
-  {
-    icon: Award,
-    title: 'Chất lượng đảm bảo',
-    description: 'Cam kết chất lượng cao với quy trình kiểm soát nghiêm ngặt',
-    color: '#2563EB',
-  },
-  {
-    icon: Clock,
-    title: 'Giao hàng đúng hạn',
-    description: 'Tuân thủ timeline và milestone đã cam kết với khách hàng',
-    color: '#16A34A',
-  },
-  {
-    icon: Users,
-    title: 'Đội ngũ chuyên nghiệp',
-    description: 'Kỹ sư giàu kinh nghiệm và tận tâm với dự án',
-    color: '#9333EA',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Hỗ trợ dài hạn',
-    description: 'Bảo trì và hỗ trợ kỹ thuật sau khi bàn giao dự án',
-    color: '#EA580C',
-  },
-]
+// commitments data unused for now; remove to keep code clean
 
 const whyChooseUs = [
   'Đội ngũ kỹ sư giàu kinh nghiệm và chuyên môn cao',
@@ -108,7 +79,7 @@ const whyChooseUs = [
   'Hỗ trợ kỹ thuật và bảo trì dài hạn',
 ]
 
-export function AboutSection() {
+export function IntroduceSection() {
   const sectionRef = useScrollReveal()
 
   const containerVariants = {
@@ -138,7 +109,7 @@ export function AboutSection() {
     <section
       ref={sectionRef}
       id="about"
-      className="section-padding animate-scroll-reveal relative overflow-hidden"
+      className="section-padding animate-scroll-reveal to-green-120/80 relative overflow-hidden bg-gradient-to-r from-green-100/60"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -156,8 +127,8 @@ export function AboutSection() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl space-y-12">
-        <div className="to-green-120/80 bg-gradient-to-r from-green-100/60 px-4 py-8 md:p-12">
+      <div className="relative z-10 mx-auto max-w-7xl space-y-24">
+        <div className="container-padding">
           {/* About Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -235,11 +206,15 @@ export function AboutSection() {
             })}
           </motion.div>
         </div>
-
-        {/* Main Content Grid */}
-        <div className="container-padding grid gap-16 lg:grid-cols-2">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="container-padding grid gap-16 lg:grid-cols-2"
+        >
           {/* Left Column */}
-          <div className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-8">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">
                 Đối tác công nghệ đáng tin cậy
@@ -253,25 +228,37 @@ export function AboutSection() {
 
             <div className="space-y-4">
               <h4 className="text-lg font-semibold">Vì sao chọn Aydada:</h4>
-              <div className="space-y-3">
+              <motion.div variants={containerVariants} className="space-y-3">
                 {whyChooseUs.map((reason, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex items-start gap-3"
+                  >
                     <CheckCircle2 className="text-primary mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span className="text-muted-foreground">{reason}</span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Core Values */}
-          <div className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-8">
             <h3 className="text-2xl font-bold md:text-3xl">Giá trị cốt lõi</h3>
-            <div className="space-y-6">
+            <motion.div variants={containerVariants} className="space-y-6">
               {values.map((value, index) => {
                 const IconComponent = value.icon
                 return (
-                  <div key={index} className="flex gap-4">
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ y: -4, scale: 1.01 }}
+                    transition={{ duration: 0.25 }}
+                    className="flex gap-4"
+                  >
                     <div
                       className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full"
                       style={{
@@ -290,60 +277,12 @@ export function AboutSection() {
                         {value.description}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 )
               })}
-            </div>
-          </div>
-        </div>
-
-        {/* Commitments Section */}
-        <div className="container-padding space-y-12 py-6">
-          <div className="space-y-4 text-center">
-            <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl">
-              Cam kết của <span className="text-gradient">Aydada</span>
-            </h2>
-            <p className="text-muted-foreground mx-auto max-w-3xl">
-              Chúng tôi đồng hành cùng bạn, vì một tương lai bền vững. Với kinh
-              nghiệm thực chiến và tư duy thiết kế hiện đại, Aydada cam kết mang
-              đến những giải pháp công nghệ chất lượng cao, đáp ứng mọi nhu cầu
-              của doanh nghiệp.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {commitments.map((commitment, index) => {
-              const IconComponent = commitment.icon
-              return (
-                <Card
-                  key={index}
-                  className="card-shadow animate-card-hover group text-center"
-                >
-                  <CardContent className="space-y-4">
-                    <div
-                      style={{
-                        backgroundColor: `${commitment.color}20`,
-                        border: `1px solid ${commitment.color}30`,
-                      }}
-                      className="bg-primary/10 mx-auto flex h-16 w-16 transform items-center justify-center rounded-2xl transition-colors duration-300 ease-in-out group-hover:rotate-6"
-                    >
-                      <IconComponent
-                        className="h-8 w-8"
-                        style={{ color: commitment.color }}
-                      />
-                    </div>
-                    <h4 className="group-hover:text-primary font-semibold">
-                      {commitment.title}
-                    </h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {commitment.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

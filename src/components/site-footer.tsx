@@ -51,8 +51,15 @@ export function SiteFooter({ className }: { className?: string }) {
   return (
     <footer
       ref={footerRef}
-      className={cn('bg-muted/50 animate-scroll-reveal border-t', className)}
+      className={cn(
+        'bg-muted/60 animate-scroll-reveal relative overflow-hidden border-t',
+        className
+      )}
     >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="from-primary/10 to-primary-light/10 absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-gradient-to-tr blur-3xl" />
+        <div className="from-primary/10 to-primary-light/20 absolute -top-20 -right-20 h-72 w-72 rounded-full bg-gradient-to-bl blur-3xl" />
+      </div>
       <div className="container-padding mx-auto max-w-7xl">
         {/* Main Footer Content */}
         <div className="grid gap-8 py-6 md:grid-cols-2 md:py-16 lg:grid-cols-4">

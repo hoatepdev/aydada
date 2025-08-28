@@ -8,15 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
 import { useScrollReveal } from '@/hooks/use-scroll-reveal'
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Send,
-  MessageCircle,
-  Sparkles,
-} from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react'
 
 const contactInfo = [
   {
@@ -80,7 +72,7 @@ export function ContactSection() {
       })
 
       setFormData({ name: '', email: '', phone: '', message: '' })
-    } catch (_error) {
+    } catch {
       toast({
         title: 'Có lỗi xảy ra',
         description:
@@ -243,7 +235,9 @@ export function ContactSection() {
                   </motion.div>
                 )
 
-                return info.href ? (
+                return info.title === 'Địa chỉ' ? (
+                  content
+                ) : info.href ? (
                   <a key={index} href={info.href} className="block">
                     {content}
                   </a>

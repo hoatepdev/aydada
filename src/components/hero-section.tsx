@@ -126,7 +126,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="container-padding relative z-10 mx-auto my-12 w-full max-w-7xl sm:my-0">
+      <div className="container-padding relative z-10 mx-auto w-full max-w-7xl">
         <motion.div
           variants={containerVariants}
           initial="hidden"

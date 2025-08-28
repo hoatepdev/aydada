@@ -143,7 +143,7 @@ export function ServicesSection() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4">
+      <div className="container-padding relative z-10 mx-auto max-w-7xl px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
