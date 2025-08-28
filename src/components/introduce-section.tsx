@@ -149,7 +149,7 @@ export function IntroduceSection() {
             </motion.div>
 
             <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl xl:text-6xl">
-              Về <span className="text-gradient">Aydada</span>
+              Về <span className="text-gradient">TechNova</span>
             </h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -158,7 +158,7 @@ export function IntroduceSection() {
               viewport={{ once: true }}
               className="text-muted-foreground mx-auto mb-10 max-w-4xl text-lg leading-relaxed md:text-xl"
             >
-              Aydada là công ty công nghệ tại TP. Hồ Chí Minh, chuyên cung cấp
+              TechNova là công ty công nghệ tại TP. Hồ Chí Minh, chuyên cung cấp
               dịch vụ outsourcing công nghệ với đội ngũ chuyên gia giàu kinh
               nghiệm, cam kết mang đến những giải pháp chất lượng cao.
             </motion.p>
@@ -220,14 +220,14 @@ export function IntroduceSection() {
                 Đối tác công nghệ đáng tin cậy
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Aydada đã
+                Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, TechNova đã
                 trở thành đối tác tin cậy của nhiều doanh nghiệp trong việc
                 chuyển đổi số và phát triển các giải pháp công nghệ.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Vì sao chọn Aydada:</h4>
+              <h4 className="text-lg font-semibold">Vì sao chọn TechNova:</h4>
               <motion.div variants={containerVariants} className="space-y-3">
                 {whyChooseUs.map((reason, index) => (
                   <motion.div

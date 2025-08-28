@@ -142,7 +142,7 @@ export function HeroSection() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="text-gray-900"
                 >
-                  Aydada –
+                  TechNova –
                 </motion.span>
                 &nbsp;
                 <motion.span

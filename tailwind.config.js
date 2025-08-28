@@ -7,37 +7,45 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'hsl(var(--color-primary))',
-        'primary-foreground': 'hsl(var(--color-primary-foreground))',
-        'primary-light': 'hsl(var(--color-primary-light))',
-        'primary-dark': 'hsl(var(--color-primary-dark))',
-        background: 'hsl(var(--color-background))',
-        foreground: 'hsl(var(--color-foreground))',
-        card: 'hsl(var(--color-card))',
-        'card-foreground': 'hsl(var(--color-card-foreground))',
-        popover: 'hsl(var(--color-popover))',
-        'popover-foreground': 'hsl(var(--color-popover-foreground))',
-        secondary: 'hsl(var(--color-secondary))',
-        'secondary-foreground': 'hsl(var(--color-secondary-foreground))',
-        muted: 'hsl(var(--color-muted))',
-        'muted-foreground': 'hsl(var(--color-muted-foreground))',
-        accent: 'hsl(var(--color-accent))',
-        'accent-foreground': 'hsl(var(--color-accent-foreground))',
-        destructive: 'hsl(var(--color-destructive))',
-        'destructive-foreground': 'hsl(var(--color-destructive-foreground))',
-        border: 'hsl(var(--color-border))',
-        input: 'hsl(var(--color-input))',
-        ring: 'hsl(var(--color-ring))',
-        'sidebar-background': 'hsl(var(--color-sidebar-background))',
-        'sidebar-foreground': 'hsl(var(--color-sidebar-foreground))',
-        'sidebar-primary': 'hsl(var(--color-sidebar-primary))',
+        primary: 'hsl(var(--color-primary) / <alpha-value>)',
+        'primary-foreground':
+          'hsl(var(--color-primary-foreground) / <alpha-value>)',
+        'primary-light': 'hsl(var(--color-primary-light) / <alpha-value>)',
+        'primary-dark': 'hsl(var(--color-primary-dark) / <alpha-value>)',
+        background: 'hsl(var(--color-background) / <alpha-value>)',
+        foreground: 'hsl(var(--color-foreground) / <alpha-value>)',
+        card: 'hsl(var(--color-card) / <alpha-value>)',
+        'card-foreground': 'hsl(var(--color-card-foreground) / <alpha-value>)',
+        popover: 'hsl(var(--color-popover) / <alpha-value>)',
+        'popover-foreground':
+          'hsl(var(--color-popover-foreground) / <alpha-value>)',
+        secondary: 'hsl(var(--color-secondary) / <alpha-value>)',
+        'secondary-foreground':
+          'hsl(var(--color-secondary-foreground) / <alpha-value>)',
+        muted: 'hsl(var(--color-muted) / <alpha-value>)',
+        'muted-foreground':
+          'hsl(var(--color-muted-foreground) / <alpha-value>)',
+        accent: 'hsl(var(--color-accent) / <alpha-value>)',
+        'accent-foreground':
+          'hsl(var(--color-accent-foreground) / <alpha-value>)',
+        destructive: 'hsl(var(--color-destructive) / <alpha-value>)',
+        'destructive-foreground':
+          'hsl(var(--color-destructive-foreground) / <alpha-value>)',
+        border: 'hsl(var(--color-border) / <alpha-value>)',
+        input: 'hsl(var(--color-input) / <alpha-value>)',
+        ring: 'hsl(var(--color-ring) / <alpha-value>)',
+        'sidebar-background':
+          'hsl(var(--color-sidebar-background) / <alpha-value>)',
+        'sidebar-foreground':
+          'hsl(var(--color-sidebar-foreground) / <alpha-value>)',
+        'sidebar-primary': 'hsl(var(--color-sidebar-primary) / <alpha-value>)',
         'sidebar-primary-foreground':
-          'hsl(var(--color-sidebar-primary-foreground))',
-        'sidebar-accent': 'hsl(var(--color-sidebar-accent))',
+          'hsl(var(--color-sidebar-primary-foreground) / <alpha-value>)',
+        'sidebar-accent': 'hsl(var(--color-sidebar-accent) / <alpha-value>)',
         'sidebar-accent-foreground':
-          'hsl(var(--color-sidebar-accent-foreground))',
-        'sidebar-border': 'hsl(var(--color-sidebar-border))',
-        'sidebar-ring': 'hsl(var(--color-sidebar-ring))',
+          'hsl(var(--color-sidebar-accent-foreground) / <alpha-value>)',
+        'sidebar-border': 'hsl(var(--color-sidebar-border) / <alpha-value>)',
+        'sidebar-ring': 'hsl(var(--color-sidebar-ring) / <alpha-value>)',
       },
       fontFamily: {
         heading: 'var(--font-family-heading)',
@@ -65,6 +73,8 @@ module.exports = {
     'bg-primary-foreground',
     'bg-secondary',
     'bg-secondary-foreground',
+    'bg-muted',
+    'bg-muted-foreground',
     'border-primary',
     'border-secondary',
     'hover:text-primary',

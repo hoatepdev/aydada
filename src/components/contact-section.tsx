@@ -14,22 +14,22 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Địa chỉ',
-    value: 'C2-610 chung cư An Viên 2, khu dân cư Nam Long, quận 7, tp HCM',
+    value: '29 Liễu Giai, Ngọc Khánh, Hà Nội, Việt Nam',
     color: 'bg-red-500',
-    href: 'https://maps.google.com/?q=C2-610+chung+cư+An+Viên+2,+khu+dân+cư+Nam+Long,+quận+7,+tp+HCM',
+    href: 'https://maps.app.goo.gl/JavvRk53PXxzqtSa8',
   },
   {
     icon: Phone,
     title: 'Điện thoại',
-    value: '+84 93 151 9393',
-    href: 'tel:+84931519393',
+    value: '+84 88 888 8888',
+    href: 'tel:+84888888888',
     color: 'bg-blue-500',
   },
   {
     icon: Mail,
     title: 'Email',
-    value: 'contact@aydada.com',
-    href: 'mailto:contact@aydada.com',
+    value: 'contact@TechNova.com',
+    href: 'mailto:contact@TechNova.com',
     color: 'bg-green-500',
   },
   {
@@ -266,9 +266,9 @@ export function ContactSection() {
                     </a>
                   </Button>
                   <Button variant="outline" asChild>
-                    <a href="mailto:contact@aydada.com">
+                    <a href="mailto:contact@TechNova.com">
                       <Mail className="mr-2 h-4 w-4" />
-                      contact@aydada.com
+                      contact@TechNova.com
                     </a>
                   </Button>
                 </div>

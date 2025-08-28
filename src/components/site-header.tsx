@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 import { useMobileMenu } from '@/contexts/mobile-menu-context'
-
+import TechnovaLogo from '@/components/ui/logo'
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useMobileMenu()
@@ -83,12 +83,12 @@ export function SiteHeader() {
             <motion.div
               whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
-              className="hero-gradient flex h-10 w-10 items-center justify-center rounded-xl shadow-lg"
+              className="hero-gradient flex h-12 w-12 items-center justify-center rounded-xl shadow-lg"
             >
-              <span className="text-xl font-bold text-white">A</span>
+              <TechnovaLogo />
             </motion.div>
             <span className="text-foreground text-2xl font-bold tracking-tight">
-              Aydada
+              TechNova
             </span>
           </motion.div>
 

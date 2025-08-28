@@ -14,6 +14,7 @@ import {
   Twitter,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import TechnovaLogo from '@/components/ui/logo'
 
 const quickLinks = [
   { label: 'Dịch vụ', href: '#services' },
@@ -52,7 +53,7 @@ export function SiteFooter({ className }: { className?: string }) {
     <footer
       ref={footerRef}
       className={cn(
-        'bg-muted/60 animate-scroll-reveal relative overflow-hidden border-t',
+        'bg-muted animate-scroll-reveal relative overflow-hidden border-t',
         className
       )}
     >
@@ -68,11 +69,9 @@ export function SiteFooter({ className }: { className?: string }) {
             <div className="space-y-4">
               {/* Logo */}
               <div className="flex items-center space-x-2">
-                <div className="hero-gradient flex h-8 w-8 items-center justify-center rounded-lg">
-                  <span className="text-lg font-bold text-white">A</span>
-                </div>
+                <TechnovaLogo className="h-12 w-12" />
                 <span className="text-foreground text-xl font-bold">
-                  Aydada
+                  TechNova
                 </span>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -146,7 +145,7 @@ export function SiteFooter({ className }: { className?: string }) {
               <div className="flex items-start gap-3">
                 <MapPin className="text-primary mt-0.5 h-4 w-4 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm leading-relaxed">
-                  C2-610 chung cư An Viên 2, khu dân cư Nam Long, quận 7, tp HCM
+                  29 Liễu Giai, Ngọc Khánh, Hà Nội, Việt Nam
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -155,16 +154,16 @@ export function SiteFooter({ className }: { className?: string }) {
                   href="tel:+84931519393"
                   className="text-muted-foreground hover:text-primary text-sm transition-colors"
                 >
-                  +84 93 151 9393
+                  +84 88 888 8888
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-primary h-4 w-4 flex-shrink-0" />
                 <a
-                  href="mailto:contact@aydada.com"
+                  href="mailto:contact@TechNova.com"
                   className="text-muted-foreground hover:text-primary text-sm transition-colors"
                 >
-                  contact@aydada.com
+                  contact@TechNova.com
                 </a>
               </div>
               <div className="flex items-start gap-3">
@@ -183,7 +182,7 @@ export function SiteFooter({ className }: { className?: string }) {
         {/* Bottom Footer */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row md:py-6">
           <p className="text-muted-foreground text-sm">
-            © 2024 Aydada. Tất cả quyền được bảo lưu.
+            © 2025 TechNova. Tất cả quyền được bảo lưu.
           </p>
           <div className="flex items-center gap-6">
             <button
@@ -193,7 +192,7 @@ export function SiteFooter({ className }: { className?: string }) {
               Về đầu trang
             </button>
             <span className="text-muted-foreground text-sm">
-              Made with ❤️ in Ho Chi Minh City
+              Made with ❤️&nbsp; in Ha Noi City
             </span>
           </div>
         </div>

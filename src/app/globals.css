@@ -74,7 +74,6 @@
   }
 
   body {
-    background-color: hsl(var(--color-background));
     color: hsl(var(--color-foreground));
     font-family: var(--font-family-body);
     margin: 0;

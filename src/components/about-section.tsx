@@ -97,7 +97,7 @@ export function AboutSection() {
           className="space-y-4 text-center"
         >
           <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl">
-            Cam kết của <span className="text-gradient">Aydada</span>
+            Cam kết của <span className="text-gradient">TechNova</span>
           </h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ export function AboutSection() {
             className="text-muted-foreground mx-auto max-w-3xl"
           >
             Chúng tôi đồng hành cùng bạn, vì một tương lai bền vững. Với kinh
-            nghiệm thực chiến và tư duy thiết kế hiện đại, Aydada cam kết mang
+            nghiệm thực chiến và tư duy thiết kế hiện đại, TechNova cam kết mang
             đến những giải pháp công nghệ chất lượng cao, đáp ứng mọi nhu cầu
             của doanh nghiệp.
           </motion.p>
