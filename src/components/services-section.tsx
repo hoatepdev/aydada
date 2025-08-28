@@ -125,7 +125,7 @@ export function ServicesSection() {
     <section
       ref={sectionRef}
       id="services"
-      className="from-muted/20 via-background to-muted/30 relative overflow-hidden bg-gradient-to-br px-4 py-20"
+      className="section-padding from-muted/20 via-background to-muted/30 relative overflow-hidden bg-gradient-to-br md:px-4"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -201,11 +201,11 @@ export function ServicesSection() {
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="bg-background/80 hover:shadow-primary/10 group relative h-full cursor-pointer overflow-hidden rounded-2xl border-1 pt-10 shadow-md backdrop-blur-sm transition-all duration-500 hover:shadow-2xl">
+                <Card className="bg-background/80 hover:shadow-primary/10 group relative h-full cursor-pointer overflow-hidden rounded-2xl border-1 shadow-md backdrop-blur-sm transition-all duration-500 hover:shadow-2xl">
                   {/* Card background gradient */}
                   <div className="from-primary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                  <CardHeader className="relative z-10 space-y-6 px-10">
+                  <CardHeader className="relative z-10 flex items-center gap-4 px-4 md:gap-8 md:px-10">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 6 }}
                       transition={{ duration: 0.3 }}
@@ -213,12 +213,12 @@ export function ServicesSection() {
                     >
                       <IconComponent className="h-10 w-10 text-white transition-transform duration-300" />
                     </motion.div>
-                    <CardTitle className="group-hover:text-primary card-title-hover text-2xl font-bold transition-all duration-300">
+                    <CardTitle className="group-hover:text-primary card-title-hover flex-1 text-2xl font-bold transition-all duration-300">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
 
-                  <CardContent className="relative z-10 flex flex-1 flex-col space-y-2 px-10">
+                  <CardContent className="relative z-10 flex flex-1 flex-col space-y-2 px-4 md:px-10">
                     <p className="text-muted-foreground flex-1 text-lg leading-relaxed">
                       {service.description}
                     </p>
@@ -255,7 +255,7 @@ export function ServicesSection() {
                       whileTap={{ scale: 0.98 }}
                       className="text-primary flex items-center text-xl font-bold"
                     >
-                      <span className="text-primary ml-10">Tìm hiểu thêm</span>
+                      <span className="text-primary ml-4">Tìm hiểu thêm</span>
                       <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                     </motion.div>
                   </CardContent>

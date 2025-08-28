@@ -49,24 +49,28 @@ const values = [
     title: 'Bền vững',
     description:
       'Cam kết phát triển công nghệ xanh, thân thiện với môi trường và hướng tới tương lai bền vững.',
+    color: '#16A34A',
   },
   {
     icon: Lightbulb,
     title: 'Đổi mới',
     description:
       'Luôn tiên phong trong việc ứng dụng công nghệ mới nhất để tạo ra những giải pháp sáng tạo.',
+    color: '#2563EB',
   },
   {
     icon: Heart,
     title: 'Tận tâm',
     description:
       'Đặt khách hàng làm trung tâm, cam kết mang lại giá trị tốt nhất cho mọi dự án.',
+    color: '#9333EA',
   },
   {
     icon: Award,
     title: 'Chất lượng',
     description:
       'Đảm bảo chất lượng cao trong từng sản phẩm, dịch vụ với quy trình kiểm soát nghiêm ngặt.',
+    color: '#EA580C',
   },
 ]
 
@@ -149,7 +153,7 @@ export function AboutSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl space-y-12">
-        <div className="to-green-120/80 bg-gradient-to-r from-green-100/60 p-12">
+        <div className="to-green-120/80 bg-gradient-to-r from-green-100/60 px-4 py-8 md:p-12">
           {/* About Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -191,7 +195,7 @@ export function AboutSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-8"
+            className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 lg:gap-8"
           >
             {stats.map((stat, index) => {
               return (
@@ -201,7 +205,7 @@ export function AboutSection() {
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="glass-effect hover:shadow-primary/10 group relative h-full overflow-hidden border-0 px-6 py-8 text-center transition-all duration-500 hover:shadow-xl">
+                  <Card className="glass-effect hover:shadow-primary/10 group relative h-full overflow-hidden border-0 px-2 py-2 text-center transition-all duration-500 hover:shadow-xl md:px-6 md:py-8">
                     <div className="from-primary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                     <CardContent className="relative z-10 space-y-3 px-0">
@@ -265,8 +269,17 @@ export function AboutSection() {
                 const IconComponent = value.icon
                 return (
                   <div key={index} className="flex gap-4">
-                    <div className="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl">
-                      <IconComponent className="text-primary h-6 w-6" />
+                    <div
+                      className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full"
+                      style={{
+                        backgroundColor: `${value.color}20`,
+                        border: `1px solid ${value.color}30`,
+                      }}
+                    >
+                      <IconComponent
+                        className="h-6 w-6"
+                        style={{ color: value.color }}
+                      />
                     </div>
                     <div className="space-y-2">
                       <h4 className="text-lg font-semibold">{value.title}</h4>
